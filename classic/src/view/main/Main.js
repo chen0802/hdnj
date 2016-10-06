@@ -1,12 +1,6 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
+
 Ext.define('HDNJ.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.container.Viewport',
     xtype: 'app-main',
 
     requires: [
@@ -18,87 +12,65 @@ Ext.define('HDNJ.view.main.Main', {
         'HDNJ.view.main.List'
     ],
 
+    layout: 'border',
     controller: 'main',
     viewModel: 'main',
 
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
-    },
-
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
-    },
-
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
+        region: 'north',
+        hidden: true,
+        title: 'TreeList',
+        iconCls: 'x-fa fa-gears',
+
         items: [{
-            xtype: 'mainlist'
+            xtype: 'button',
+            text: 'Options',
+            menu: [{
+                text: 'Expander Only',
+                checked: true,
+                handler: 'onToggleConfig',
+                config: 'expanderOnly'
+            }, {
+                text: 'Single Expand',
+                checked: false,
+                handler: 'onToggleConfig',
+                config: 'singleExpand'
+            }]
+        },{
+            xtype: 'button',
+            text: 'Nav',
+            enableToggle: true,
+            reference: 'navBtn',
+            toggleHandler: 'onToggleNav'
+        },{
+            xtype: 'button',
+            text: 'Micro',
+            enableToggle: true,
+            toggleHandler: 'onToggleMicro'
+        }]        
+
+    }, {
+        region: 'west',
+        width: 250,
+        split: true,
+        reference: 'treelistContainer',
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+        border: false,
+        scrollable: 'y',
+        items: [{
+            xtype: 'treelist',
+            reference: 'treelist',
+            bind: '{navItems}'
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
+        region: 'center',
+        bodyPadding: 10,
         bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
+            html: '{selectionText}'
         }
     }]
+
 });
