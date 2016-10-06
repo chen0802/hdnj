@@ -26,63 +26,55 @@ Ext.define('HDNJ.view.main.MainModel', {
             root: {
                 expanded: true,
                 children: [{
-                    text: 'Home',
-                    iconCls: 'x-fa fa-home',
+                    text: '灵枢九卷',
+                    iconCls: 'fa fa-folder-o',
                     children: [{
-                        text: 'Messages',
+                        text: '第一卷',
                         iconCls: 'x-fa fa-inbox',
-                        leaf: true
-                    },{
-                        text: 'Archive',
-                        iconCls: 'x-fa fa-database',
                         children: [{
-                            text: 'First',
-                            iconCls: 'x-fa fa-sliders',
+                            text: '经脉第一',
+                            iconCls: 'fa fa-folder-o',
                             leaf: true
                         },{
-                            text: 'No Icon',
-                            iconCls: null,
+                            text: '始终第二',
+                            iconCls: 'fa fa-folder-o',
                             leaf: true
                         }]
                     },{
-                        text: 'Music',
-                        iconCls: 'x-fa fa-music',
+                        text: '第一卷',
+                        iconCls: 'x-fa fa-inbox',
                         leaf: true
                     },{
-                        text: 'Video',
-                        iconCls: 'x-fa fa-film',
-                        leaf: true
-                    }]
-                },{
-                    text: 'Users',
-                    iconCls: 'x-fa fa-user',
-                    children: [{
-                        text: 'Tagged',
-                        iconCls: 'x-fa fa-tag',
+                        text: '第二卷',
+                        iconCls: 'x-fa fa-inbox',
                         leaf: true
                     },{
-                        text: 'Inactive',
-                        iconCls: 'x-fa fa-trash',
-                        leaf: true
-                    }]
-                },{
-                    text: 'Groups',
-                    iconCls: 'x-fa fa-group',
-                    leaf: true
-                },{
-                    text: 'Settings',
-                    iconCls: 'x-fa fa-wrench',
-                    children: [{
-                        text: 'Sharing',
-                        iconCls: 'x-fa fa-share-alt',
+                        text: '第三卷',
+                        iconCls: 'x-fa fa-inbox',
                         leaf: true
                     },{
-                        text: 'Notifications',
-                        iconCls: 'x-fa fa-flag',
+                        text: '第四卷',
+                        iconCls: 'x-fa fa-inbox',
                         leaf: true
                     },{
-                        text: 'Network',
-                        iconCls: 'x-fa fa-signal',
+                        text: '第五卷',
+                        iconCls: 'x-fa fa-inbox',
+                        leaf: true
+                    },{
+                        text: '第六卷',
+                        iconCls: 'x-fa fa-inbox',
+                        leaf: true
+                    },{
+                        text: '第七卷',
+                        iconCls: 'x-fa fa-inbox',
+                        leaf: true
+                    },{
+                        text: '第八卷',
+                        iconCls: 'x-fa fa-inbox',
+                        leaf: true
+                    },{
+                        text: '第九卷',
+                        iconCls: 'x-fa fa-inbox',
                         leaf: true
                     }]
                 }]

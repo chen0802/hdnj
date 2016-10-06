@@ -51,6 +51,7 @@ Ext.define('HDNJ.view.main.Main', {
 
     }, {
         region: 'west',
+        title: '黄帝内经',
         width: 250,
         split: true,
         reference: 'treelistContainer',
@@ -67,6 +68,7 @@ Ext.define('HDNJ.view.main.Main', {
         }]
     }, {
         region: 'center',
+        title: 'Content',
         bodyPadding: 10,
         bind: {
             html: '{selectionText}'
