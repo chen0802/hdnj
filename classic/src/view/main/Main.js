@@ -68,7 +68,7 @@ Ext.define('HDNJ.view.main.Main', {
         }]
     }, {
         region: 'center',
-        title: 'Content',
+        title: '详细内容',
         bodyPadding: 10,
         bind: {
             html: '{selectionText}'
