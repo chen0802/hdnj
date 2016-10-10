@@ -69,6 +69,7 @@ Ext.define('HDNJ.view.main.Main', {
     }, {
         region: 'center',
         title: '详细内容',
+        scrollable: 'y',
         bodyPadding: 10,
         bind: {
             html: '{selectionText}'

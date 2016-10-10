@@ -1,2 +1,2 @@
 // @tag full-page
-// @require E:\product\frontend\tchen\hdnj\app.js
+// @require D:\zuzong\hdnj\app.js
